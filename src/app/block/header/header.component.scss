@@ -4,6 +4,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0.2rem 4rem ;
+    box-sizing: border-box;
     background-color:#3A4750;
     .logo{
         color: #00ADB5;
@@ -20,10 +21,12 @@ nav{
         }   
     }
     .navigation{
+        
         ul{
+            padding-left: 7vw;
             display: flex;
             width: 25vw;
-            justify-content: space-between;
+            justify-content: space-around;
             list-style: none;
             a{
                 font-size: 1.7rem;
