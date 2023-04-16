@@ -1,0 +1,77 @@
+nav{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 4rem ;
+    background-color:#3A4750;
+    .logo{
+        color: #00ADB5;
+        // box-sizing: border-box;
+        text-align: center;
+        cursor: pointer;
+        padding: 0.3rem 0;
+        img{
+            width:6.5vw;
+            height: 4.6vh;
+            object-fit:cover;
+            object-position: 50% 50%;
+            filter: invert(0.9);
+        }   
+    }
+    .navigation{
+        ul{
+            display: flex;
+            width: 25vw;
+            justify-content: space-between;
+            list-style: none;
+            a{
+                font-size: 1.7rem;
+                text-decoration: none;
+                color: #EEEEEE;
+                transition: all 0.3s;
+            }
+            a:hover{
+                color: #00ADB5;
+            }
+        }
+      
+    }
+    .login-buttons{
+        display: flex;
+        gap: 1rem;
+        button{
+            font-size: 1.2rem;
+            font-family: 'Fjalla One', sans-serif;
+            height: 5vh;
+            width: 7vw;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .login{
+            color: #00ADB5;
+            border:solid 2px #00ADB5 ;
+            transition: all 0.3s ease-in-out;
+        }
+        .login:hover{
+            color: #EEEEEE;
+            background-color: #00ADB5;
+        }
+        .login:active{
+            background-color: #00949c;
+            border: none;
+        }
+        .s-up{
+            color: #EEEEEE;
+            background-color:  #303841 ;
+            transition: all 0.3s;
+        }
+        .s-up:hover{
+            color: #00ADB5;
+        }
+        .s-up:active{
+            background-color: #22282e;
+        }
+    }
+}
