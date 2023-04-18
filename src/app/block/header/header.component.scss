@@ -1,5 +1,4 @@
 nav{
-    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +47,7 @@ nav{
             font-family: 'Fjalla One', sans-serif;
             height: 5vh;
             width: 7vw;
-            border-radius: 0.5rem;
+            border-radius: 0.3rem;
             border: none;
             cursor: pointer;
         }
@@ -77,4 +76,8 @@ nav{
             background-color: #22282e;
         }
     }
+ 
+}
+.active{
+    color: #00ADB5 !important;
 }

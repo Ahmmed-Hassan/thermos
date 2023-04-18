@@ -1,0 +1,32 @@
+<div class="page-wrapper">
+  <div class="left-section">
+    <img src="../../../assets/thermos-logo-png-transparent.png" alt="" />
+    <h1>TOURNAMENTS</h1>
+  </div>
+  <div class="login">
+    <form class="form">
+        <h1>LOGIN</h1>
+      <div class="inputs">
+        <input
+          id="email"
+          type="email"
+          class="input"
+          matInput
+          [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher"
+          placeholder="Ex. pat@example.com"
+        />
+
+        <input
+          id="password"
+          type="password"
+          class="input"
+          matInput
+          [formControl]="password"
+          [errorStateMatcher]="matcher"
+        />
+      </div>
+      <button type="submit" class="login-btn">LOGIN</button>
+    </form>
+  </div>
+</div>
