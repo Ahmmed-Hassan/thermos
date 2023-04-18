@@ -10,7 +10,9 @@
     padding: 2rem;
     gap: 8vh;
     background-color: #303841;
-    height:91.1vh;
+    height:100vh;
+    box-sizing: border-box;
+    padding: 4rem 0 0 0;
 .title{
     height: 50vh;
     display: flex;
