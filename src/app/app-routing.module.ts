@@ -6,6 +6,7 @@ import { LoginComponent } from './modules/login/login.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: '', pathMatch:'full', redirectTo:'home' },
   { path: 'tournaments', component: TournamentsComponent },
   {path: 'login', component:LoginComponent}
 ];
