@@ -8,7 +8,12 @@ import { HeaderComponent } from './block/header/header.component';
 import { FooterComponent } from './block/footer/footer.component';
 import { NavbarComponent } from './block/navbar/navbar.component';
 import { TournamentsComponent } from './modules/tournaments/tournaments.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { LoginComponent } from './modules/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +21,18 @@ import { TournamentsComponent } from './modules/tournaments/tournaments.componen
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    TournamentsComponent
+    LoginComponent,
+    TournamentsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

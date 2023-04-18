@@ -1,14 +1,45 @@
+*{
+    text-transform: uppercase;
+}
 .main{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    box-sizing: border-box;
+    padding: 2rem;
+    gap: 8vh;
     background-color: #303841;
     height:91.1vh;
 .title{
-    height: 30vh;
+    height: 50vh;
     display: flex;
-    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     h1{
         color: #00ADB5;
         font-size: 5rem;
     }
+    .discover{
+        cursor: pointer;
+        font-size: 1.5rem;
+        height: 8vh;
+        width: 15vw;
+        border-radius: 0.3rem;
+        color: #00ADB5;
+        border:solid 2px #00ADB5 ;
+        transition: all 0.3s ease-in-out;
+    }
+    .discover:hover{
+        color: #EEEEEE;
+        background-color: #00ADB5;
+    }
+    .discover:active{
+        background-color: #00949c;
+        border: none;
+    }
 }
+
 }
