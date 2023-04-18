@@ -1,8 +1,9 @@
 .page-wrapper{
     background-color: #303841;
-    height:91.1vh;
+    height:100vh;
     display: flex;
-    padding: 0 0rem;
+    box-sizing: border-box;
+    padding: 4rem 0 0 0;
     align-items: center;
     justify-content: space-between;
     .left-section{
@@ -28,6 +29,7 @@
         }
     }
     .login{
+        // margin-bottom: 10rem;
         width: 50vw;
         display: flex;
         justify-content: center;
