@@ -4,7 +4,7 @@
     <h1>TOURNAMENTS</h1>
   </div>
   <div class="login">
-    <form class="form">
+    <form class="form" [formGroup]="signInForm">
         <h1>LOGIN</h1>
       <div class="inputs">
         <input
@@ -12,21 +12,29 @@
           type="email"
           class="input"
           matInput
-          [formControl]="emailFormControl"
-          [errorStateMatcher]="matcher"
-          placeholder="Ex. pat@example.com"
+          formControlName="email"
+          placeholder="EMAIL"
         />
 
         <input
           id="password"
           type="password"
           class="input"
+          placeholder="PASSWORD"
           matInput
-          [formControl]="password"
-          [errorStateMatcher]="matcher"
+          formControlName="password"
         />
       </div>
-      <button type="submit" class="login-btn">LOGIN</button>
+      <button  type="submit" class="login-btn">LOGIN</button>
+
+      <hr style="margin-top: 2.5rem; width: 21vw;" >
+      <div style=" margin-top: -6vh; margin-left:4.3vw; background-color: #303841; width: 12vw; text-align: center;" >
+        <h2 style="color: white;">
+          OTHER LOGIN
+        </h2>
+      </div>
+      <a style="  width: 20.9vw; display: flex; align-items: center;justify-content: center;" href="https://www.google.com" target="_blank" rel="noopener noreferrer"><img style="height:2.5rem;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png" alt=""></a>
     </form>
+   
   </div>
 </div>

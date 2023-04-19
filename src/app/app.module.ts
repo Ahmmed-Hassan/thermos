@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LoginComponent } from './modules/login/login.component';
+import { SignupComponent } from './modules/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { LoginComponent } from './modules/login/login.component';
     NavbarComponent,
     LoginComponent,
     TournamentsComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
