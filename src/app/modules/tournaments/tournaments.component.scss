@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    // padding: 2rem;   
     gap: 6vh;
     background-color: #303841;
     height:100vh;
@@ -16,14 +15,12 @@
         display: flex;
         justify-content: space-between;
 .title{
-    height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: baseline;
     align-items: flex-start;
-    hr{
-        width:16vw;
-    }
+    border-bottom: 2px solid #EEEEEE;
+   
     h1{
         color: #00ADB5;
         font-size: 3.5rem;

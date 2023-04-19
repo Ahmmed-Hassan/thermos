@@ -12,7 +12,7 @@
         align-items: center;
         width: 50vw;
         height: 100%;
-        background-image: url('../../../assets/wallpapersden.com_kayn-hd-league-of-legends_2048x1294.jpg');
+        background-image: url('../../../assets/kayn-signup.jpg');
         background-size: cover;
         background-position: center;
         h1{
@@ -38,7 +38,7 @@
         flex-direction: column;
         gap: 4vh;
         h1{
-            font-size: 3rem;
+            font-size: 2.3rem;
             color: #00ADB5;
         }
         .inputs{
@@ -47,7 +47,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 2vh;
+        gap: 3vh;
         width: 30rem;
         .label:focus{
             padding-top: 1rem !important;
@@ -63,7 +63,7 @@
         // background-color: #EEEEEE;
         }
         }
-        .login-btn{
+        .signup-btn{
             cursor: pointer;
             border-radius: 0.3rem;
             font-size: 1.5rem;
@@ -73,11 +73,11 @@
             border:solid 2px #00ADB5 ;
             transition: all 0.3s ease-in-out;
         }
-        .login-btn:hover{
+        .signup-btn:hover{
             color: #EEEEEE;
             background-color: #00ADB5;
         }
-        .login-btn:active{
+        .signup-btn:active{
             background-color: #00949c;
             border: none;
         }

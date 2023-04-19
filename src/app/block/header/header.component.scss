@@ -20,6 +20,10 @@ nav{
             object-position: 50% 50%;
             filter: invert(0.9);
         }   
+        p{
+            height: 1rem;
+            font-size: 0.8vi;
+        }
     }
     .navigation{
         
@@ -27,7 +31,8 @@ nav{
             padding-left: 7vw;
             display: flex;
             width: 25vw;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 2.5vw;
             list-style: none;
             a{
                 font-size: 1.7rem;
@@ -43,6 +48,7 @@ nav{
     }
     .login-buttons{
         display: flex;
+        width: 15vw;
         gap: 1rem;
         button{
             font-size: 1.2rem;
