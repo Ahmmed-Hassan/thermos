@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "thermos-website": {
+      "hosting": {
+        "thermos": [
+          "thermos-website"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "thermos-website"
+  }
+}

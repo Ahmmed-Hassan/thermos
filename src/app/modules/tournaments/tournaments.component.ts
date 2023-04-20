@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-tournaments',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tournaments.component.scss']
 })
 export class TournamentsComponent {
-
+  selected = new FormControl('1');
 }

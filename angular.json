@@ -97,6 +97,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "thermos:build:production",
+            "firebaseProject": "thermos-website",
+            "firebaseHostingSite": "thermos-website"
+          }
         }
       }
     }
