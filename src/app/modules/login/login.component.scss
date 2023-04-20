@@ -87,3 +87,6 @@
 input:focus{
     outline: none;
 }
+button:disabled {
+    cursor: not-allowed !important;
+  }
