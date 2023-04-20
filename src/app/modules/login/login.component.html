@@ -25,7 +25,7 @@
           formControlName="password"
         />
       </div>
-      <button  type="submit" class="login-btn">LOGIN</button>
+      <button  type="submit" class="login-btn" [disabled]="!signInForm.valid">LOGIN</button>
 
       <hr style="margin-top: 2.5rem; width: 21vw;" >
       <div style=" margin-top: -6vh; margin-left:4.3vw; background-color: #303841; width: 12vw; text-align: center;" >
