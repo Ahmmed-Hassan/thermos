@@ -5,10 +5,10 @@
         </div>
         <mat-form-field class="list">
             <mat-label class="mat-label" >Choose a game</mat-label>
-            <mat-select >
-              <mat-option value="option1">League Of Legends</mat-option>
-              <mat-option value="option2">Valorant</mat-option>
-              <mat-option value="option3">TFT</mat-option>
+            <mat-select [formControl]="selected" >
+              <mat-option value="1" selected >League Of Legends</mat-option>
+              <mat-option value="2">Valorant</mat-option>
+              <mat-option value="3">TFT</mat-option>
             </mat-select>
           </mat-form-field>
           </div>

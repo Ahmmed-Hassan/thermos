@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MyErrorStateMatcher } from '../login/login.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +8,7 @@ import { MyErrorStateMatcher } from '../login/login.component';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  constructor( private fb: FormBuilder,){
+  constructor( private fb: FormBuilder,  private authService: AuthService){
 
   }
   signUpForm!: FormGroup;
@@ -25,5 +25,11 @@ export class SignupComponent implements OnInit {
       cpassword: ['', [Validators.required]],
     });
   }
-
+  onSubmit(){
+    this.authService.login(this.signUpForm.value.email, this.signUpForm.value.password);
+    this.form();
+  }
+  signInWithGoogle() {
+    this.authService.googleSignIn();
+  }
 }
