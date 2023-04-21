@@ -23,7 +23,7 @@ form() {
 
 
 onSubmit(){
-  this.authService.register(this.signInForm.value.email, this.signInForm.value.password);
+  this.authService.login(this.signInForm.value.email, this.signInForm.value.password);
   this.form();
 }
 signInWithGoogle() {
