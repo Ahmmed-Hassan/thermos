@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     });
   }
   onSubmit(){
-    this.authService.login(this.signUpForm.value.email, this.signUpForm.value.password);
+    this.authService.register(this.signUpForm.value.email, this.signUpForm.value.password, this.signUpForm.value.userName);
     this.form();
   }
   signInWithGoogle() {

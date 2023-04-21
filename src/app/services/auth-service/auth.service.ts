@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private fireAuth: AngularFireAuth, private router: Router) {}
+  constructor(private fireAuth: AngularFireAuth, private router: Router, private fireStore: AngularFirestore) {}
   login(email: string, password: string) {
     this.fireAuth.signInWithEmailAndPassword(email, password).then(
       res => {
@@ -20,11 +21,19 @@ export class AuthService {
   }
 
 
-  register(email:string, password: string){
+  register(email:string, password: string, userName: string){
     this.fireAuth.createUserWithEmailAndPassword(email, password).then(
       res=>{
         alert('Registered Successfully');
         this.sendEmailForVerification(res.user);
+        const user = res.user;
+        const username = userName// Get the user's username from the form input
+    
+        // Create a new document in Firestore with the user's profile information
+        this.fireStore.collection('users').doc(user!.uid).set({
+          email: email,
+          username: username
+        });
       }, err=>{
         alert(err.message);
         this.router.navigate(['/sign-up'])
