@@ -22,27 +22,42 @@ nav{
         }   
         p{
             height: 1rem;
-            font-size: 0.8vi;
+            font-size: 0.8rem;
         }
     }
     .navigation{
+        width: 55vw;
         
-        ul{
-            padding-left: 7vw;
+        .menu{
             display: flex;
-            width: 25vw;
-            justify-content: center;
-            gap: 2.5vw;
+            
+            justify-content: space-between;
+            align-items: center;
             list-style: none;
+            .nav-buttons{
+                display: flex;
+                gap: 2vw;
             a{
                 font-size: 1.7rem;
                 text-decoration: none;
                 color: #EEEEEE;
                 transition: all 0.3s;
+
+                
+                // padding: 7px 15px;
+                transition: 0.2s all ease-in-out;
+                color: #fff;
+                &:hover{
+                    opacity: 1 !important;
+                    color: #fff;
+                }
             }
-            a:hover{
-                color: #00ADB5;
+           &:hover{
+            a{
+                opacity: 0.4;
             }
+           }
+        }
         }
       
     }
@@ -89,3 +104,82 @@ nav{
 .active{
     color: #00ADB5 !important;
 }
+
+
+  .menu-icon {
+    display: none;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  #menu-toggle:checked ~ .menu {
+    transform: scale(1, 1);
+  }
+  
+
+  @media only screen and (max-width: 950px) {
+    nav{
+        padding:0rem 2rem  ;
+    }
+    .navigation{
+        display: flex;
+        justify-content:flex-end;
+    }
+    .logo{
+        // width: 20%;s
+        img{
+            width:100%!important;
+
+            height: 100%;
+            object-fit:cover;
+            object-position: 50% 50%;
+            filter: invert(0.9);
+        }
+    }
+    .menu {
+    //   flex-direction: column;
+      background-color: #151418;
+      align-items: center;
+
+      position: absolute;
+      top: 61px;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      .nav-buttons{
+        flex-direction: column;
+      }
+    }
+ 
+    .login-buttons{
+        width: 30vw !important;
+        flex-direction: column;
+        button{
+
+            height: 5vh;
+            width: 30vw !important;
+
+        }
+    }
+    .menu a {
+      margin-left: 12px;
+    }
+  
+    .menu li {
+      margin-bottom: 10px;
+    }
+  
+    .menu-icon {
+      display: block;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  }
+  
