@@ -5,20 +5,45 @@
     </div>
 
     <div class="navigation">
-        <ul>
-            <li>
-                <a routerLink="home" routerLinkActive="active">HOME</a>
-            </li>
-            <li>
-                <a routerLink="tournaments" routerLinkActive="active">TOURNAMENTS</a>
-            </li>
-            <li>
-                <a href="https://discord.gg/rWQyGcy6Cb" target="_blank" rel="noopener noreferrer">DISCORD</a>
-            </li>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+            <div class="nav-buttons">
+                <li>
+                    <a routerLink="home" routerLinkActive="active">HOME</a>
+                </li>
+                <li>
+                    <a routerLink="tournaments" routerLinkActive="active">TOURNAMENTS</a>
+                </li>
+                <li>
+                    <a href="https://discord.gg/rWQyGcy6Cb" target="_blank" rel="noopener noreferrer">DISCORD</a>
+                </li>
+            </div>
+    
+            <div class="login-buttons">
+                <button class="login" [routerLink]="['/login']" *ngIf="!login">LOGIN</button>
+                <button class="s-up" [routerLink]="['/sign-up']" *ngIf="!signUp">Sign Up</button>
+            </div>
         </ul>
     </div>
-<div class="login-buttons">
-    <button class="login" [routerLink]="['/login']" *ngIf="!login">LOGIN</button>
-    <button class="s-up" [routerLink]="['/sign-up']" *ngIf="!signUp">Sign Up</button>
-</div>
+
 </nav>
+
+
+      
+      <!-- <header class="header">
+        <nav>
+          <div class="logo">
+            <a href="index.html">Humayun.<span>K</span></a>
+          </div>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Connect</a></li>
+          </ul>
+        </nav>
+      </header> -->
+

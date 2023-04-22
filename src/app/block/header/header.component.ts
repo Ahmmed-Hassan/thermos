@@ -9,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   login = false;
   signUp = false;
-
+  open: boolean = false;
+  toggleMenuOpen () {
+    this.open = !this.open
+  }
   constructor(private routeService:RouteService){
 
   }
@@ -26,6 +29,7 @@ export class HeaderComponent implements OnInit {
         this.signUp = false;
       }
     });
+    this.toggleMenuOpen();
   }
 
 }
