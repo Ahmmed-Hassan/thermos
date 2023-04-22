@@ -1,92 +1,157 @@
-.page-wrapper{
-    background-color: #303841;
-    height:100vh;
-    display: flex;
-    box-sizing: border-box;
-    padding: 4rem 0 0 0;
-    align-items: center;
-    justify-content: space-between;
-    .left-section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50vw;
-        height: 100%;
-        background-image: url('https://pbs.twimg.com/media/FW0tDKgWQAEJl3a.jpg:large');
-        background-size: cover;
-        background-position: center;
-        h1{
-            color: #00ADB5;
-            padding-left: 1rem;
-            font-size: 2.6rem;
-        }
-        img{
-            width:30vw;
-            height: 40vh;
-            object-fit:cover;
-            object-position: 50% 15%;
-            filter: invert(0.9);
-        }
-    }
-    .login{
-        // margin-bottom: 10rem;
-        width: 50vw;
-        display: flex;
-        justify-content: center;
-    .form{
-        display: flex;
-        flex-direction: column;
-        gap: 4vh;
-        h1{
-            font-size: 3rem;
-            color: #00ADB5;
-        }
-        .inputs{
+.page-wrapper {
+  background-color: #303841;
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  padding: 4rem 0 0 0;
+  align-items: center;
+  justify-content: space-between;
+  @media only screen and (max-width: 950px) {
+    height: 100%;
+  }
 
-        
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    height: 100%;
+    background-image: url("https://pbs.twimg.com/media/FW0tDKgWQAEJl3a.jpg:large");
+    background-size: cover;
+    background-position: center;
+    @media only screen and (max-width: 950px) {
+      width: 0%;
+    }
+    h1 {
+      @media only screen and (max-width: 950px) {
+        font-size: 0;
+      }
+      color: #00adb5;
+      padding-left: 1rem;
+      font-size: 2.6rem;
+    }
+    img {
+      @media only screen and (max-width: 950px) {
+        width: 0;
+      }
+      width: 30vw;
+      height: 40vh;
+      object-fit: cover;
+      object-position: 50% 15%;
+      filter: invert(0.9);
+    }
+  }
+  .login {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: 950px) {
+      width: 100%;
+      height: 100%;
+      background-image: url("https://pbs.twimg.com/media/FW0tDKgWQAEJl3a.jpg:large");
+      background-color: grey;
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 4vh;
+      @media only screen and (max-width: 950px) {
+        align-items: center;
+        width: 100% !important;
+        justify-content: center;
+      }
+      h1 {
+        @media only screen and (max-width: 950px) {
+          width: 65vw;
+        }
+        font-size: 3rem;
+        color: #00adb5;
+      }
+      .inputs {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 2vh;
         width: 30rem;
-        .label:focus{
-            padding-top: 1rem !important;
+        @media only screen and (max-width: 950px) {
+          width: 100%;
+          align-items: center;
+          .input {
+            width: 60vw !important;
+          }
         }
-        .input{
-            color: #00ADB5;
-            padding-left:1rem ;
+        .label:focus {
+          padding-top: 1rem !important;
+        }
+        .input {
+          color: #00adb5;
+          padding-left: 1rem;
           height: 6vh;
           width: 20vw;
           font-size: 1.4rem;
           border-radius: 0.3rem;
           border: none;
-        // background-color: #EEEEEE;
         }
+      }
+      .login-btn {
+        cursor: pointer;
+        border-radius: 0.3rem;
+        font-size: 1.5rem;
+        width: 20.9vw;
+        height: 6vh;
+        color: #00adb5;
+        border: solid 2px #00adb5;
+        transition: all 0.3s ease-in-out;
+        @media only screen and (max-width: 950px) {
+          width: 64vw;
         }
-        .login-btn{
-            cursor: pointer;
-            border-radius: 0.3rem;
-            font-size: 1.5rem;
-            width: 20.9vw;
-            height: 6vh;
-            color: #00ADB5;
-            border:solid 2px #00ADB5 ;
-            transition: all 0.3s ease-in-out;
-        }
-        .login-btn:hover{
-            color: #EEEEEE;
-            background-color: #00ADB5;
-        }
-        .login-btn:active{
-            background-color: #00949c;
-            border: none;
-        }
+      }
+      .login-btn:hover {
+        color: #eeeeee;
+        background-color: #00adb5;
+      }
+      .login-btn:active {
+        background-color: #00949c;
+        border: none;
+      }
     }
+    hr {
+      margin-top: 2.5rem;
+      width: 21vw;
+      @media only screen and (max-width: 950px) {
+        display: none;
+      }
     }
+    .login-with {
+      margin-top: -6vh;
+      margin-left: 4.3vw;
+      background-color: #303841;
+      width: 12vw;
+      text-align: center;
+      @media only screen and (max-width: 950px) {
+        margin-top: 0;
+        background-color: transparent;
+        width: 30vw;
+        margin-left: -3vw;
+      }
+      h2 {
+        color: white;
+      }
+    }
+    .google-logo {
+      width: 20.9vw;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
 }
-input:focus{
-    outline: none;
+input:focus {
+  outline: none;
 }
 button:disabled {
-    cursor: not-allowed !important;
-  }
+  cursor: not-allowed !important;
+}

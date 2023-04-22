@@ -46,13 +46,13 @@
         </div>
          <button  type="submit" class="signup-btn" [disabled]="!signUpForm.valid || signUpForm.value.password != signUpForm.value.cpassword">SIGN UP</button>
   
-        <hr style="margin-top: 2.5rem; width: 21vw;" >
-        <div style=" margin-top: -6vh; margin-left:4.3vw; background-color: #303841; width: 12vw; text-align: center;" >
-          <h2 style="color: white;">
+        <hr >
+        <div class="login-with" >
+          <h2 >
             SIGNUP WITH
           </h2>
         </div>
-        <a style="  width: 21vw; display: flex; align-items: center;justify-content: center;cursor: pointer;" (click)="signInWithGoogle()"><img style="height:2.5rem;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png" alt=""></a>
+        <a class="google-logo" (click)="signInWithGoogle()"><img style="height:2.5rem;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2008px-Google_%22G%22_Logo.svg.png" alt=""></a>
       </form>
      
     </div>
