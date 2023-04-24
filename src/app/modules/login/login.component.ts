@@ -8,6 +8,14 @@ import { AuthService } from 'src/app/services/auth-service/auth.service';
 })
 export class LoginComponent implements OnInit{
   signInForm!: FormGroup;
+
+  get email(){
+    return this.signInForm.get('email')
+  }
+  get password(){
+    return this.signInForm.get('password');
+  }
+
 constructor(private fb:FormBuilder,  private authService: AuthService){
 
 }
@@ -16,7 +24,7 @@ ngOnInit(): void {
 }
 form() {
   this.signInForm = this.fb.group({
-    email: ['', [Validators.email,Validators.required]],
+    email: ['', [Validators.email, Validators.required]],
     password: ['', Validators.required],
   });
 }

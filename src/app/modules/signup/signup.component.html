@@ -8,7 +8,8 @@
         <h1>ACCOUNT CREATION</h1>
         <div class="inputs">
             <input
-            
+            [class.is-invalid] = "userName.invalid &&
+            userName.touched"
             type="text"
             class="input"
             matInput
@@ -16,16 +17,24 @@
             
             placeholder="USERNAME"
           />
+          <div *ngIf="userName.invalid && userName.touched">
+            <small *ngIf="userName.errors?.['required']" class="text-danger">Username is required!</small>
+            <small *ngIf="userName.errors?.['minlength']" class="text-danger">Username must be at least 4 charecters</small>
+            </div>
+            <br>
           <input
             id="email"
             type="email"
             class="input"
             matInput
             formControlName="email"
-           
+            [class.is-invalid] = "email.invalid && email.touched"
             placeholder="EMAIL"
           />
-  
+          <div *ngIf="email.invalid && email.touched">
+            <small *ngIf="email.errors?.['required']" class="text-danger">EMAIL IS REQUIRED!</small>
+            </div>
+          <br>
           <input
             id="password"
             type="password"
@@ -33,16 +42,23 @@
             placeholder="PASSWORD"
             matInput
             formControlName="password"
-           
+            [class.is-invalid] = "password.invalid && password.touched"
           />
+          <div *ngIf="password.invalid && password.touched">
+            <small *ngIf="password.errors?.['required'] || password.errors?.['minlength']" class="text-danger">PASSWORD MUST BE ATLEAST 8 CHARECTERS</small>
+            </div>
+          <br>
           <input
           type="password"
           class="input"
           placeholder="CONFIRM PASSWORD"
           matInput
           formControlName="cpassword"
-         
+          [class.is-invalid] = "signUpForm.errors?.['passwordsNotMatch'] && password.touched"
         />
+        <div *ngIf=" cpassword.touched">
+          <small *ngIf="signUpForm.errors?.['passwordsNotMatch']" class="text-danger">PASSWORDS MUST MATCH</small>
+          </div>
         </div>
          <button  type="submit" class="signup-btn" [disabled]="!signUpForm.valid || signUpForm.value.password != signUpForm.value.cpassword">SIGN UP</button>
   
