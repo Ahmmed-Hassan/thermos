@@ -8,22 +8,30 @@
         <h1>LOGIN</h1>
       <div class="inputs">
         <input
-          id="email"
-          type="email"
-          class="input"
-          matInput
-          formControlName="email"
-          placeholder="EMAIL"
-        />
-
-        <input
-          id="password"
-          type="password"
-          class="input"
-          placeholder="PASSWORD"
-          matInput
-          formControlName="password"
-        />
+        id="email"
+        type="email"
+        class="input"
+        matInput
+        formControlName="email"
+        [class.is-invalid] = "email.invalid && email.touched"
+        placeholder="EMAIL"
+      />
+      <div *ngIf="email.invalid && email.touched">
+        <small *ngIf="email.errors?.['required']" class="text-danger">EMAIL IS REQUIRED!</small>
+        </div>
+      <br>
+      <input
+        id="password"
+        type="password"
+        class="input"
+        placeholder="PASSWORD"
+        matInput
+        formControlName="password"
+        [class.is-invalid] = "password.invalid && password.touched"
+      />
+      <div *ngIf="password.invalid && password.touched">
+        <small *ngIf="password.errors?.['required'] " class="text-danger">PASSWORD IS REQUIRED!</small>
+        </div>
       </div>
       <button  type="submit" class="login-btn" [disabled]="!signInForm.valid">LOGIN</button>
 
