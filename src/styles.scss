@@ -75,11 +75,14 @@ html, body { height: 100%; }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #3D3051;
+  background: rgba(158, 158, 158, 0.598);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #00ADB5;
   border-radius: 1rem;
+}
+.mat-mdc-tab .mdc-tab__text-label{
+  color: #c2c2c2;
 }
