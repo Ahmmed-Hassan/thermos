@@ -7,7 +7,6 @@ import { HomeComponent } from './modules/home/home.component';
 import { HeaderComponent } from './block/header/header.component';
 import { FooterComponent } from './block/footer/footer.component';
 import { NavbarComponent } from './block/navbar/navbar.component';
-import { TournamentsComponent } from './modules/tournaments/tournaments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
@@ -20,6 +19,10 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import {MatTabsModule} from '@angular/material/tabs';
+import { TournamentsModule } from './modules/tournaments/tournaments.module';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { TournamentsService } from './services/tournaments-service/tournaments.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,6 @@ import { AngularFireModule } from '@angular/fire/compat';
     FooterComponent,
     NavbarComponent,
     LoginComponent,
-    TournamentsComponent,
     SignupComponent,
   ],
   imports: [
@@ -40,12 +42,14 @@ import { AngularFireModule } from '@angular/fire/compat';
     MatSelectModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    TournamentsModule,
+    provideFirebaseApp( () => initializeApp(environment.firebase)),
 
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase())
   ],
-  providers: [],
+  providers: [TournamentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

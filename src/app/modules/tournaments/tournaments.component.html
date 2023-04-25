@@ -12,17 +12,10 @@
             </mat-select>
           </mat-form-field>
           </div>
-    <div class="body">
-        <h1>
-            Enter tournaments to earn free points !
-        </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda maiores magni optio at harum rem ratione quam enim reprehenderit repudiandae laborum quod vero, sint delectus atque, earum quaerat libero!</p>
-        <br>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium aut quidem laudantium optio in iusto, pariatur officia tenetur, suscipit dolorem officiis impedit ullam sit quod soluta quisquam minima fuga animi!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum assumenda maiores magni optio at harum rem ratione quam enim reprehenderit repudiandae laborum quod vero, sint delectus atque, earum quaerat libero!</p>
-        <br>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium aut quidem laudantium optio in iusto, pariatur officia tenetur, suscipit dolorem officiis impedit ullam sit quod soluta quisquam minima fuga animi!</p>
-    </div>
+          <mat-tab-group class="mat-tab-group" animationDuration="0ms">
+            <mat-tab label="Current Tournaments"><app-current-tournaments [cardsData]="allTournaments"></app-current-tournaments></mat-tab>
+            <mat-tab label="my Tournaments"><app-my-tournaments></app-my-tournaments></mat-tab>
+          </mat-tab-group>
 </div>
 
 
