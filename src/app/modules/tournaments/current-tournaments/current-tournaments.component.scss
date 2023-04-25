@@ -1,0 +1,90 @@
+.page-wrapper{
+    padding: 2rem;
+    .cards{
+        display: flex;
+        row-gap: 3rem;
+        column-gap: 3.5rem;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 950px) {
+            flex-direction: column;
+           column-gap: 1rem;
+        }
+        // justify-content: s;
+        .card{
+            height: 59.5vh;
+            width: 16vw;
+            border-radius: 0.3rem;
+            background-repeat: no-repeat;
+            background-color: #3a4750;
+            background-blend-mode:multiply;
+            background-size: cover;
+            background-position: center;
+            @media only screen and (max-width: 950px) {
+                width: 100%;
+                height: fit-content;
+            }
+            .desc{
+                padding: 1rem;
+                box-sizing: border-box;
+                gap: 2rem;
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                color: #EEEEEE;
+
+                h3{
+                  margin-top: 10rem;
+                    width:90%;
+                    color: #dfdfdf;
+                }
+                .details{
+    
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+      
+                    
+                    gap: 3rem;
+                    h4{
+                        font-size: 1.3rem;
+                    }
+                    p{
+                        color: #00adb5;
+                        font-size: 1rem;
+                    }
+                }
+                .buttons {
+
+                    button {
+                      font-size: 1.2rem;
+                      font-family: "Fjalla One", sans-serif;
+                      height: 5vh;
+                      width: 7vw;
+                      border-radius: 0.3rem;
+                      border: none;
+                      cursor: pointer;
+                      @media only screen and (max-width: 950px) {
+                        padding: 0 1rem ;
+                       width: fit-content;
+                    }
+                    }
+                    .join-btn {
+                      color: #3a4750;
+                      border: solid 2px #3a4750;
+                      transition: all 0.3s ease-in-out;
+                    }
+                    .join-btn:hover {
+                      color: #eeeeee;
+                      background-color: #3a4750;
+                    }
+                    .join-btn:active {
+                      background-color: #495965;
+                      border: none;
+                    }
+                  }
+            }
+        }
+    }
+}

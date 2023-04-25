@@ -1,0 +1,44 @@
+<div class="page-wrapper">
+<div class="cards">
+    <div class="card" *ngFor=" let card of cardsData" style="background-image: url({{card.img_url}}) ;">
+
+        <div class="desc" >
+            <h1>
+                {{card.title}}
+            </h1>
+
+            <h3>
+                {{card.date}}
+            </h3>
+            <div class="details">
+                <div>
+                    <h4>Score </h4> 
+                    
+                    <p>{{card.score}}</p>
+                </div>
+                <div>
+                    <h4>Players  </h4>
+                    
+                    <p>{{card.players}}</p>
+                </div>
+                <div>
+                    <h4>Entry</h4>
+                    
+                    <p>{{card.fee}}</p>
+                </div>
+                <div>
+                    <h4>duration</h4>
+                    
+                    <p>{{card.duration}}</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="login-buttons">
+                    <button class="join-btn"  >JOIN</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

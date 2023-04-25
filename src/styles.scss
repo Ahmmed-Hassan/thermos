@@ -68,4 +68,18 @@ $thermos-theme: mat.define-light-theme((
     margin: 0;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3D3051;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00ADB5;
+  border-radius: 1rem;
+}

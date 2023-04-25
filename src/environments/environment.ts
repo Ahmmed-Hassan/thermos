@@ -3,14 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  firebase: {
-    projectId: 'thermos-website',
-    appId: '1:900706769770:web:776455f4fa338f4767e313',
-    storageBucket: 'thermos-website.appspot.com',
-    apiKey: 'AIzaSyC9j247o-AXr40wLDkFC1WtSo-vtqlQyWU',
-    authDomain: 'thermos-website.firebaseapp.com',
-    messagingSenderId: '900706769770',
-  },
+ firebase : {
+  apiKey: "AIzaSyC9j247o-AXr40wLDkFC1WtSo-vtqlQyWU",
+  authDomain: "thermos-website.firebaseapp.com",
+  databaseURL: "https://thermos-website-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "thermos-website",
+  storageBucket: "thermos-website.appspot.com",
+  messagingSenderId: "900706769770",
+  appId: "1:900706769770:web:776455f4fa338f4767e313"
+},
 
   production: false,
  
