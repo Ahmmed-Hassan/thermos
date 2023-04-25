@@ -23,6 +23,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { TournamentsModule } from './modules/tournaments/tournaments.module';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { TournamentsService } from './services/tournaments-service/tournaments.service';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { TournamentsService } from './services/tournaments-service/tournaments.s
     AppRoutingModule,
     BrowserAnimationsModule,
     TournamentsModule,
+    MatMenuModule,
     provideFirebaseApp( () => initializeApp(environment.firebase)),
 
     provideAuth(() => getAuth()),

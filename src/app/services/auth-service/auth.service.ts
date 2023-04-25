@@ -3,6 +3,7 @@ import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +12,15 @@ export class AuthService {
   login(email: string, password: string) {
     this.fireAuth.signInWithEmailAndPassword(email, password).then(
       res => {
-        localStorage.setItem('token', 'true');
+        localStorage.setItem('token',res.user?.uid);
+        localStorage.setItem('userData',JSON.stringify(res.user));
+        let data;
+         this.fireStore.collection('users/').doc( localStorage.getItem('token')).valueChanges().subscribe(
+          res=> {data = res
+          localStorage.setItem('displayName', data.username)} 
+      
+        );
+        this.router.navigate(['/home'])
       },
       (err) => {
         alert('Something went wrong');
@@ -43,8 +52,9 @@ export class AuthService {
   logout(){
     this.fireAuth.signOut().then(
       ()=>{
-        localStorage.removeItem('token')
-        this.router.navigate(['/login']);
+        localStorage.removeItem('token');
+        localStorage.removeItem('userData');
+        this.router.navigate(['/home']);
       }, err =>{
         alert(err.message)
       }
@@ -77,9 +87,15 @@ export class AuthService {
 
       this.router.navigate(['/home']);
       localStorage.setItem('token',JSON.stringify(res.user?.uid));
+      localStorage.setItem('userData',JSON.stringify(res.user));
 
     }, err => {
       alert(err.message);
     })
+  }
+
+  checkLoggedIn(): Observable<boolean> {
+    const data = localStorage.getItem('userData');
+    return of(data !== null);
   }
 }
