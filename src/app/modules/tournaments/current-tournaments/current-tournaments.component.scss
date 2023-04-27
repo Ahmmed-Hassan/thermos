@@ -12,16 +12,18 @@
         }
         // justify-content: s;
         .card{
-            height: fit-content;
-            width: 16vw;
+            height: auto;
+            width: auto;
             border-radius: 0.3rem;
             background-repeat: no-repeat;
             background-color: #323c45;
             background-blend-mode:overlay;
             background-size: cover;
-            background-position: center;
+            background-position: 50% 0%;
+            // object-position: ;
             @media only screen and (max-width: 950px) {
                 width: 100%;
+                background-position: 50% 10%;
             }
             .desc{
                 padding: 1rem;
@@ -37,7 +39,11 @@
                     font-size: 1.7rem;
                 }
                 h3{
+                  @media only screen and (max-width: 950px) {
+                    // margin-top: 80%;
+                  }
                   margin-top: 10rem;
+                  font-size: 1rem;
                     width:90%;
                     color: #dfdfdf;
                 }
@@ -46,9 +52,10 @@
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     grid-template-rows: repeat(2, 1fr);
-      
+                  width: 100%;
                     
-                    gap: 3rem;
+                    row-gap: 2rem;
+                    column-gap: 5rem;
                     h4{
                         font-size: 1.3rem;
                     }
