@@ -3,7 +3,7 @@
     .cards{
         display: flex;
         row-gap: 3rem;
-        column-gap: 3.5rem;
+        column-gap: 4rem;
         flex-wrap: wrap;
         justify-content: center;
         @media only screen and (max-width: 950px) {
@@ -16,11 +16,15 @@
             width: auto;
             border-radius: 0.3rem;
             background-repeat: no-repeat;
-            background-color: #323c45;
+            background-color: #36414b;
+            box-shadow:  0 0 20px rgba(0, 0, 0, 0.692);
             background-blend-mode:overlay;
             background-size: cover;
             background-position: 50% 0%;
-            // object-position: ;
+            transition: all 0.3s ease;
+            &:hover{
+              scale: (1.03);
+            }
             @media only screen and (max-width: 950px) {
                 width: 100%;
                 background-position: 50% 10%;
