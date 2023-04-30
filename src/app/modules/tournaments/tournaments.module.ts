@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { TournamentsService } from 'src/app/services/tournaments-service/tournaments.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { TournamentViewComponent } from './tournament-view/tournament-view.component';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { environment } from 'src/environments/environment';
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  declarations: [TournamentsComponent, CurrentTournamentsComponent, MyTournamentsComponent ],
+  declarations: [TournamentsComponent, CurrentTournamentsComponent, MyTournamentsComponent, TournamentViewComponent ],
   providers: [TournamentsService ]
 })
 export class TournamentsModule { }
