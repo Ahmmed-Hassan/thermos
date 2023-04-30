@@ -12,12 +12,14 @@ import { TournamentsService } from 'src/app/services/tournaments-service/tournam
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { TournamentViewComponent } from './tournament-view/tournament-view.component';
+import { RouterLink } from '@angular/router';
 
 
 @NgModule({
   imports: [
     CommonModule,
     MatTabsModule,
+    RouterLink,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,

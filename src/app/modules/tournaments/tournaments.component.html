@@ -1,21 +1,29 @@
 <div class="main">
-    <div class="page-header">
-        <div class="title">
-            <h1> TOURNAMENTS  </h1>
-        </div>
-        <mat-form-field class="list">
-            <mat-label class="mat-label" >Choose a game</mat-label>
-            <mat-select  [(value)]="gameSelect" [(ngModel)]="gameSelect" (selectionChange)="onSelect()" >
-              <mat-option value="lol" selected >League Of Legends</mat-option>
-              <mat-option value="valorant">Valorant</mat-option>
-              <mat-option value="tft">TFT</mat-option>
-            </mat-select>
-          </mat-form-field>
-          </div>
-          <mat-tab-group class="mat-tab-group" animationDuration="0ms">
-            <mat-tab label="All Tournaments"><app-current-tournaments [cardsData]="gameTournaments"></app-current-tournaments></mat-tab>
-            <!-- <mat-tab label="my Tournaments"><app-my-tournaments></app-my-tournaments></mat-tab> -->
-          </mat-tab-group>
+  <div class="page-header">
+    <div class="title">
+      <h1>TOURNAMENTS</h1>
+    </div>
+    <mat-form-field class="list">
+      <mat-label class="mat-label">Choose a game</mat-label>
+      <mat-select
+        [(value)]="gameSelect"
+        [(ngModel)]="gameSelect"
+        (selectionChange)="onSelect()"
+      >
+        <mat-option value="lol" selected>League Of Legends</mat-option>
+        <mat-option value="valorant">Valorant</mat-option>
+        <mat-option value="tft">TFT</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-tab-group class="mat-tab-group" animationDuration="0ms">
+    <mat-tab label="All Tournaments"
+      ><app-current-tournaments
+        [cardsData]="gameTournaments"
+      ></app-current-tournaments
+    ></mat-tab>
+    <mat-tab label="my Tournaments"
+      ><app-my-tournaments></app-my-tournaments
+    ></mat-tab>
+  </mat-tab-group>
 </div>
-
-

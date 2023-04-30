@@ -60,11 +60,12 @@ export class AuthService {
         localStorage.removeItem('token');
         localStorage.removeItem('userData');
         this.router.navigate(['/home']);
-        this.openSnackBar("LOGGEDOUT SUCCESSFULLY")
+        
       }, err =>{
         alert(err.message)
       }
     )
+    this.openSnackBar("LOGGEDOUT SUCCESSFULLY")
   }
 
 
@@ -106,7 +107,11 @@ export class AuthService {
   }
 
 
-
+  get isLoggedIn() {
+    // debugger
+  let x =localStorage.getItem('token')
+    return x;
+  }
 
 
   openSnackBar(data: any) {

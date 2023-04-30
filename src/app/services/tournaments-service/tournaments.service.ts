@@ -19,4 +19,13 @@ getTournaments(): Observable<any> {
     });
   });
 }
+getTournamentById(id: number): Observable<any> {
+  const starCountRef = ref(this.database, 'tournaments/' + (id -1));
+  return new Observable((observer) => {
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      observer.next(data);
+    });
+  });
+}
 }

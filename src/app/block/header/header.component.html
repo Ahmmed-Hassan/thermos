@@ -1,54 +1,57 @@
 <nav>
-    <div class="logo" routerLink="home">
-        <img src="../../../assets/thermos-logo-png-transparent.png" alt="">
-<p>TOURNAMENTS</p>
-    </div>
+  <div class="logo" routerLink="home">
+    <img src="../../../assets/thermos-logo-png-transparent.png" alt="" />
+    <p>TOURNAMENTS</p>
+  </div>
 
-    <div class="navigation">
-        <input type="checkbox" id="menu-toggle" [checked]="isChecked">
-        <label (click)="toggleCheck()"  class="menu-icon">&#9776;</label>
-        <ul class="menu">
-            <div class="nav-buttons" >
-                <li (click)="toggleCheck()" >
-                    <a routerLink="home" routerLinkActive="active" >HOME</a>
-                </li>
-                <li (click)="toggleCheck()">
-                    <a routerLink="tournaments" routerLinkActive="active" >TOURNAMENTS</a>
-                </li>
-                <li (click)="toggleCheck()">
-                    <a href="https://discord.gg/rWQyGcy6Cb" target="_blank" rel="noopener noreferrer" >DISCORD</a>
-                </li>
-            </div>
+  <div class="navigation">
+    <input type="checkbox" id="menu-toggle" [checked]="isChecked" />
+    <label (click)="toggleCheck()" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <div class="nav-buttons">
+        <li (click)="toggleCheck()">
+          <a routerLink="home" routerLinkActive="active">HOME</a>
+        </li>
+        <li (click)="toggleCheck()">
+          <a routerLink="tournaments" routerLinkActive="active">TOURNAMENTS</a>
+        </li>
+        <li (click)="toggleCheck()">
+          <a
+            href="https://discord.gg/rWQyGcy6Cb"
+            target="_blank"
+            rel="noopener noreferrer"
+            >DISCORD</a
+          >
+        </li>
+      </div>
 
-            <div class="login-buttons">
-                <div *ngIf="loggedIn$ | async" class="loggedin">
-                    <p style="color: white;">{{ userData.displayName? userData.displayName.toUpperCase() : displayName}}</p>
-                    <button class="login" >PROFILE</button>
-                <button (click)="logOut()" class="s-up" >LOGOUT</button>
-                  </div>
-                <button (click)="toggleCheck()" class="login" [routerLink]="['/login']" *ngIf="!login && !(loggedIn$ |async)">LOGIN</button>
-                <button (click)="toggleCheck()" class="s-up" [routerLink]="['/sign-up']" *ngIf="!signUp && !(loggedIn$ |async)">Sign Up</button>
-            </div>
-        </ul>
-    </div>
-
+      <div class="login-buttons">
+        <div *ngIf="loggedIn$ | async" class="loggedin">
+          <p style="color: white">
+            {{
+              userData.displayName? userData.displayName.toUpperCase(): displayName
+            }}
+          </p>
+          <button class="login">PROFILE</button>
+          <button (click)="logOut()" class="s-up">LOGOUT</button>
+        </div>
+        <button
+          (click)="toggleCheck()"
+          class="login"
+          [routerLink]="['/login']"
+          *ngIf="!login && !(loggedIn$ | async)"
+        >
+          LOGIN
+        </button>
+        <button
+          (click)="toggleCheck()"
+          class="s-up"
+          [routerLink]="['/sign-up']"
+          *ngIf="!signUp && !(loggedIn$ | async)"
+        >
+          Sign Up
+        </button>
+      </div>
+    </ul>
+  </div>
 </nav>
-
-
-      
-      <!-- <header class="header">
-        <nav>
-          <div class="logo">
-            <a href="index.html">Humayun.<span>K</span></a>
-          </div>
-          <input type="checkbox" id="menu-toggle">
-          <label for="menu-toggle" class="menu-icon">&#9776;</label>
-          <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Connect</a></li>
-          </ul>
-        </nav>
-      </header> -->
-
