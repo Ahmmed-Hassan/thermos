@@ -1,6 +1,6 @@
 <div class="page-wrapper">
 <div class="cards">
-    <div class="card" *ngFor=" let card of cardsData" style="background-image: url({{card.img_url}}) ;">
+    <div class="card" *ngFor=" let card of cardsData"  routerLinkActive="router-link-active"  style="background-image: url({{card.card_img}}) ;">
 
         <div class="desc" >
             <h1>
@@ -34,7 +34,7 @@
             </div>
             <div class="buttons">
                 <div class="login-buttons">
-                    <button class="join-btn"  >VIEW</button>
+                    <button class="join-btn" [routerLink]="['/tournament/'+card.id]" >VIEW</button>
                     
                 </div>
             </div>

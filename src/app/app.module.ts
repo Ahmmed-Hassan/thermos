@@ -18,8 +18,6 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
-import {MatTabsModule} from '@angular/material/tabs';
 import { TournamentsModule } from './modules/tournaments/tournaments.module';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { TournamentsService } from './services/tournaments-service/tournaments.service';
@@ -37,12 +35,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    AppRoutingModule,
+   
     BrowserAnimationsModule,
     TournamentsModule,
     MatSnackBarModule,
