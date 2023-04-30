@@ -86,3 +86,21 @@ html, body { height: 100%; }
 .mat-mdc-tab .mdc-tab__text-label{
   color: #c2c2c2;
 }
+
+.mat-simple-snackbar{
+  justify-content: center !important;
+}
+.mat-simple-snackbar {
+  font-family: 'Rubik' !important;
+  font-size: 1.2rem !important;
+}
+.mat-snack-bar-container {
+  color: rgb(255 255 255);
+  border-radius: 0.5rem !important;
+  background-color: white;
+}
+.mat-menu-content:not(:empty) {
+  // width: 30rem !important;
+  padding-top: 0 !important;
+  background-color: #00ADB5 !important;
+}

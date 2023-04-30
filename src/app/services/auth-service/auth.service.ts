@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { SnackBarAlertComponent } from 'src/app/block/snack-bar-alert/snack-bar-alert.component';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private fireAuth: AngularFireAuth, private router: Router, private fireStore: AngularFirestore) {}
+  constructor(private fireAuth: AngularFireAuth, private router: Router, private fireStore: AngularFirestore, private _snackBar: MatSnackBar) {}
   login(email: string, password: string) {
     this.fireAuth.signInWithEmailAndPassword(email, password).then(
       res => {
@@ -16,9 +18,11 @@ export class AuthService {
         localStorage.setItem('userData',JSON.stringify(res.user));
         let data;
          this.fireStore.collection('users/').doc( localStorage.getItem('token')).valueChanges().subscribe(
-          res=> {data = res
-          localStorage.setItem('displayName', data.username)} 
-      
+          res=> {data = res;
+          localStorage.setItem('displayName', data.username);
+          this.openSnackBar(`WELCOME BACK ${data.username.toUpperCase()}`);
+        } 
+          
         );
         this.router.navigate(['/home'])
       },
@@ -33,8 +37,9 @@ export class AuthService {
   register(email:string, password: string, userName: string){
     this.fireAuth.createUserWithEmailAndPassword(email, password).then(
       res=>{
-        alert('Registered Successfully');
+        this.openSnackBar('Registered Successfully');
         this.sendEmailForVerification(res.user);
+        this.router.navigate(['/login'])
         const user = res.user;
         const username = userName// Get the user's username from the form input
     
@@ -55,6 +60,7 @@ export class AuthService {
         localStorage.removeItem('token');
         localStorage.removeItem('userData');
         this.router.navigate(['/home']);
+        this.openSnackBar("LOGGEDOUT SUCCESSFULLY")
       }, err =>{
         alert(err.message)
       }
@@ -88,7 +94,7 @@ export class AuthService {
       this.router.navigate(['/home']);
       localStorage.setItem('token',JSON.stringify(res.user?.uid));
       localStorage.setItem('userData',JSON.stringify(res.user));
-
+      this.openSnackBar(`WELCOME ${res.user.displayName.toUpperCase()}`)
     }, err => {
       alert(err.message);
     })
@@ -97,5 +103,16 @@ export class AuthService {
   checkLoggedIn(): Observable<boolean> {
     const data = localStorage.getItem('userData');
     return of(data !== null);
+  }
+
+
+
+
+
+  openSnackBar(data: any) {
+    this._snackBar.openFromComponent(SnackBarAlertComponent, {
+      duration: 3000,
+      data: data,
+    });
   }
 }
